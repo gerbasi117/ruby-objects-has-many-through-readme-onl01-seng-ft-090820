@@ -49,7 +49,15 @@ describe "Basic class structures" do
   require "spec_helper"
 
 
-  
+  describe "Meal" do
+    describe "#new" do
+      it "initializes with a waiter, a customer, a total and a tip" do
+        ian = Customer.new("Ian", 30)
+        niky = Waiter.new("Niky", 28)
+
+        expect{Meal.new(niky, ian, 50, 3)}.to_not raise_error
+      end
+    end
 
     describe ".all" do
       it "is class method that returns the contents of @@all" do
