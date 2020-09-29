@@ -121,25 +121,7 @@ describe "Object relationships" do
       end
     end
 
-    describe "#waiters" do
-      it "returns an Array of Waiter instances associated with this customer's meals" do
-        howard = Customer.new("Howard", 30)
-        daniel = Customer.new("Daniel", 30)
-        terrance = Waiter.new("Terrance", 1)
-        joe = Waiter.new("Joe", 10)
-        esmery = Waiter.new("Esmery", 2)
-        andrew = Waiter.new("Andrew", 3)
-        
-        howard.new_meal(terrance, 15, 2)
-        howard.new_meal(joe, 15, 4)
-        howard.new_meal(andrew, 15, 5)
-        daniel.new_meal(terrance, 20, 1)
-        daniel.new_meal(esmery, 15, 3)
-
-        expect(howard.waiters).to eq([terrance, joe, andrew])
-        expect(daniel.waiters).to eq([terrance, esmery])
-      end
-    end
+    
   end
 
   describe "Waiter" do
